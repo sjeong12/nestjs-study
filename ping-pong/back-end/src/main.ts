@@ -7,10 +7,9 @@ async function bootstrap() {
   app.use(passport.initialize());
   app.use(passport.session());
   app.enableCors({
-    origin: '*',
-    methods: 'GET, PUT, POST, DELETE',
-    allowedHeaders: 'Content-Type, Authorization',
-});
+    origin: 'http://localhost:3001',
+    credentials: true,
+  });
   await app.listen(3000);
 }
 bootstrap();
