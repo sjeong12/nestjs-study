@@ -15,7 +15,7 @@ export class FtStrategy extends PassportStrategy(Strategy) {
       callbackURL,
     });
   }
-  async validate(accessToken: string, rfreshToken: string, profile: any) {
+  async validate(accessToken: string, refreshToken: string, profile: any) {
     console.log('🔍 FtStrategy extends PassportStrategy...');
     try {
       const user = {
@@ -23,7 +23,7 @@ export class FtStrategy extends PassportStrategy(Strategy) {
         username: profile.username,
         token: accessToken
       };
-      console.log(`[rt] ${rfreshToken}`);
+      console.log(`[rt] ${refreshToken}`);
       return user;
     } catch (e) {
       console.log(`❌ strategy error: ${e}`);
